@@ -10,13 +10,15 @@ const imageSelector = () => {
       const activeImage = document.getElementsByClassName('active')[0]
 
       if (activeImage && image.src === activeImage.src) {
-        image.classList.add('complete');
-        activeImage.classList.add('complete');
-
-        image.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
-        activeImage.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
-
         activeImage.classList.remove('active');
+
+        window.setTimeout(() => {
+          image.classList.add('complete');
+          activeImage.classList.add('complete');
+
+          image.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
+          activeImage.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
+        }, 500);
       } else if (activeImage) {
         activeImage.classList.remove('active');
         window.setTimeout(() => {
