@@ -1,6 +1,6 @@
 const completionCheck = () => {
   if (document.querySelectorAll('.complete').length === document.querySelectorAll('.card-holder').length) {
-    setTimeout(() => alert(`You won! It took you ${document.getElementById('second-count').innerHTML} seconds to complete`), 0.01);
+    alert(`You won! It took you ${document.getElementById('second-count').innerHTML} seconds to complete`);
     location.reload();
   }
 };
@@ -12,11 +12,10 @@ const timer = () => {
 
   function setTime() {
     ++totalSeconds;
-    secondsLabel.innerHTML = totalSeconds;
-    if (secondsLabel.innerHTML === '1') {
-      document.getElementById('second-word').innerHTML = 'second'
-    } else if (secondsLabel.innerHTML === '2') {
-      document.getElementById('second-word').innerHTML = 'seconds'
+    if (secondsLabel.innerHTML === '0 seconds') {
+      secondsLabel.innerHTML = `${totalSeconds} second`;
+    } else {
+      secondsLabel.innerHTML = `${totalSeconds} seconds`;
     }
   }
 }
@@ -24,7 +23,7 @@ const timer = () => {
 const imageSelector = () => {
   document.querySelectorAll('.hidden').forEach(image => {
     image.addEventListener('click', event => {
-      if (document.getElementById('second-count').innerHTML === '0') {
+      if (document.getElementById('second-count').innerHTML === '0 seconds') {
         timer();
       }
       image.classList.remove('hidden');
@@ -54,4 +53,4 @@ const imageSelector = () => {
   })
 };
 
-export { imageSelector, timer };
+export default imageSelector;
