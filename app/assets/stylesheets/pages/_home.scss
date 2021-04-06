@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+img {
+  width: 150px;
+  height: 250px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  object-fit: cover;
+}
+
+.hidden {
+  opacity: 50%;
+}
