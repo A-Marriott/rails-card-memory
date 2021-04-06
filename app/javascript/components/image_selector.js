@@ -8,9 +8,12 @@ const imageSelector = () => {
     image.addEventListener('click', event => {
       image.classList.toggle('hidden');
       if (document.getElementsByClassName('active')[0]) {
-        console.log('hey')
+        console.log('first check')
+        if (image.src === document.getElementsByClassName('active')[0].src) {
+          console.log('second check')
+        }
       } else {
-        image.classList.toggle('active');
+        image.classList.add('active');
       }
     })
   })
@@ -20,3 +23,4 @@ export default imageSelector;
 
 
 // as we build images they get assigned class like image1 image 2
+// add logic in case they press same image twice
