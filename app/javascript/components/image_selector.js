@@ -26,29 +26,29 @@ const imageSelector = () => {
       if (document.getElementById('second-count').innerHTML === '0 seconds') {
         timer();
       }
-      image.classList.remove('hidden');
       const activeImage = document.getElementsByClassName('active')[0]
-        if (image.classList.contains('active') || image.classList.contains('complete')) {
-          // do nothing
-        } else if (activeImage && image.src === activeImage.src) {
-          activeImage.classList.remove('active');
-          window.setTimeout(() => {
-            image.classList.add('complete');
-            activeImage.classList.add('complete');
+      image.classList.remove('hidden');
+      if (image.classList.contains('active') || image.classList.contains('complete')) {
+        // do nothing
+      } else if (activeImage && image.src === activeImage.src) {
+        activeImage.classList.remove('active');
+        window.setTimeout(() => {
+          image.classList.add('complete');
+          activeImage.classList.add('complete');
 
-            image.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
-            activeImage.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
-            completionCheck();
-          }, 300);
-        } else if (activeImage) {
-          activeImage.classList.remove('active');
-          window.setTimeout(() => {
-            image.classList.add('hidden');
-            activeImage.classList.add('hidden');
-          }, 800);
-        } else {
-          image.classList.add('active');
-        }
+          image.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
+          activeImage.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
+          completionCheck();
+        }, 300);
+      } else if (activeImage) {
+        activeImage.classList.remove('active');
+        window.setTimeout(() => {
+          image.classList.add('hidden');
+          activeImage.classList.add('hidden');
+        }, 800);
+      } else {
+        image.classList.add('active');
+      }
     })
   })
 };
