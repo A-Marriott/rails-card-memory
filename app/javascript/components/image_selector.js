@@ -6,7 +6,7 @@
 const imageSelector = () => {
   document.querySelectorAll('.hidden').forEach(image => {
     image.addEventListener('click', event => {
-      image.classList.toggle('hidden');
+      image.classList.remove('hidden');
       const activeImage = document.getElementsByClassName('active')[0]
 
       if (activeImage && image.src === activeImage.src) {
@@ -20,8 +20,12 @@ const imageSelector = () => {
         activeImage.parentElement.style.borderRadius = '24px'
 
         activeImage.classList.remove('active');
-      } else if (1 === 1) {
-
+      } else if (activeImage) {
+        window.setTimeout(() => {
+          image.classList.add('hidden');
+          activeImage.classList.add('hidden');
+          activeImage.classList.remove('active');
+        }, 500);
       } else {
         image.classList.add('active');
       }
@@ -31,8 +35,7 @@ const imageSelector = () => {
 
 export default imageSelector;
 
-
-// as we build images they get assigned class like image1 image 2
 // add logic in case they press same image twice
-// maybe change active image to const
 // need another function to always check if its been completed
+// add logic for pressing image thats already completed
+// Issues if clicking images way too fast
