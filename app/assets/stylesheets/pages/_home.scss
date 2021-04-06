@@ -1,4 +1,17 @@
 // Specific CSS for your home-page
+h1 {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.second-container {
+  display: flex;
+  justify-content: center;
+  h3 {
+    padding: 4px;
+  }
+}
+
 .grid-container {
   margin: auto;
   display: grid;

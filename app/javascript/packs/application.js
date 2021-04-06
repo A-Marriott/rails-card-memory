@@ -26,10 +26,9 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import imageSelector from '../components/image_selector';
+import { imageSelector, timer } from '../components/image_selector';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   imageSelector();
-  // console.log(document.getElementsByClassName('active')[0].src);
 });
