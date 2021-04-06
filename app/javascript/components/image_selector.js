@@ -8,7 +8,7 @@ const imageSelector = () => {
     image.addEventListener('click', event => {
       image.classList.remove('hidden');
       const activeImage = document.getElementsByClassName('active')[0]
-        if (image.classList.contains('active')) {
+        if (image.classList.contains('active') || image.classList.contains('complete')) {
 
         } else if (activeImage && image.src === activeImage.src) {
           activeImage.classList.remove('active');
