@@ -21,10 +21,10 @@ const imageSelector = () => {
 
         activeImage.classList.remove('active');
       } else if (activeImage) {
+        activeImage.classList.remove('active');
         window.setTimeout(() => {
           image.classList.add('hidden');
           activeImage.classList.add('hidden');
-          activeImage.classList.remove('active');
         }, 500);
       } else {
         image.classList.add('active');
@@ -38,4 +38,3 @@ export default imageSelector;
 // add logic in case they press same image twice
 // need another function to always check if its been completed
 // add logic for pressing image thats already completed
-// Issues if clicking images way too fast

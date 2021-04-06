@@ -1,16 +1,21 @@
 // Specific CSS for your home-page
 .grid-container {
-
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 600px;
+  grid-gap: 16px;
 }
 
 .card-holder {
   background-size: fit;
   margin-right: 16px;
+  height: 250px;
 }
 
 img {
-  width: 150px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
