@@ -1,12 +1,19 @@
 // Specific CSS for your home-page
+.card-holder {
+  background-size: fit;
+  margin-right: 16px;
+}
+
 img {
   width: 150px;
   height: 250px;
-  margin-bottom: 16px;
-  margin-right: 16px;
   object-fit: cover;
 }
 
 .hidden {
-  opacity: 50%;
+  opacity: 0%;
+}
+
+.complete {
+  filter: grayscale(100%);
 }
