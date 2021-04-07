@@ -1,6 +1,6 @@
 const completionCheck = () => {
   if (document.querySelectorAll('.complete').length === document.querySelectorAll('.card-holder').length) {
-    alert(`You won! It took you ${document.getElementById('second-count').innerHTML} seconds to complete`);
+    alert(`You won! It took you ${document.getElementById('second-count').innerHTML} to complete`);
     location.reload();
   }
 };
