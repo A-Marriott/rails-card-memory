@@ -26,9 +26,9 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import imageSelector  from '../components/image_selector';
+import cardLogic from '../components/card_logic.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  imageSelector();
+  cardLogic();
 });
