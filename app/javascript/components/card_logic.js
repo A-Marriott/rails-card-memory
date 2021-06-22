@@ -1,6 +1,6 @@
 const cardLogic = () => {
   const secondsLabel = document.getElementById('second-count');
-  let totalSeconds = 0;
+  let totalSeconds = null;
 
   const completionCheck = () => {
     if (document.querySelectorAll('.complete').length === document.querySelectorAll('.card-holder').length) {
@@ -27,7 +27,8 @@ const cardLogic = () => {
       image.addEventListener('click', event => {
         const activeImage = document.querySelector('.active')
         image.classList.remove('hidden');
-        if (totalSeconds === 0) {
+        if (totalSeconds === null) {
+          totalSeconds = 0;
           timer();
         }
         if (activeImage && image.src === activeImage.src) {
@@ -38,7 +39,15 @@ const cardLogic = () => {
 
             image.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
             activeImage.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
+
             completionCheck();
+
+            // async function cardSucess() {
+            //   image.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
+            //   activeImage.parentElement.style.backgroundImage = 'url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/1200px-Dark_green.svg.png")';
+            // }
+
+            // cardSucess().then(completionCheck());
           }, 300);
         } else if (activeImage) {
           activeImage.classList.remove('active');
